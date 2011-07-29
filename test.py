@@ -22,10 +22,10 @@ subscribe_params = {
     'list_id'           :   'theListId',
     'client_id'         :   'theClientId',
     'email'             :   'theEmailToSusbcribe',
-    'data[First Name]'  :   'Astrogildo',
-    'data[Last Name]'   :   'Astrogildois',
-    'data[Phone #]'     :   'Astrogildo',
-    'data[Endereço]'    :   'Rua das Acácias'
+    'data[First Name]'  :   'FirstName',
+    'data[Last Name]'   :   'LastName',
+    'data[Phone #]'     :   '514826936',
+    'data[Endereço]'    :   '1234 Rnd Street'
 }
 
 response = apiobj.call(['List', 'subscribeEmail'], subscribe_params)
