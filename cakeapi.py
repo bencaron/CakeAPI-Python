@@ -15,5 +15,5 @@ class API:
             response = json.loads(urllib2.urlopen(request).read())
             return response
         except urllib2.HTTPError as error:
-            return json.loads('{"Error": "%s"}' % error)
+            return dict(Error=str(error))
         
