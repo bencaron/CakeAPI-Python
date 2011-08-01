@@ -2,8 +2,10 @@ import urllib, urllib2, json
 
 class API:
 
-    header = {'apikey':''}
     url = 'https://api.wbsrvc.com/'
+
+    def __init__(self, key):
+        self.header = dict(apikey=key)
 
     def call(self, method, params):
         request = urllib2.Request(

@@ -3,8 +3,8 @@
 from cakeapi import API
 import json # Not needed. Used only for pretty printing the JSON object
 
-apiobj = API()
-apiobj.header['apikey'] = 'yourAPIKey'
+# Initialize the API Object by parsing your API Key
+apiobj = API('YourApiKey')
 
 # Log in
 login_params = {
