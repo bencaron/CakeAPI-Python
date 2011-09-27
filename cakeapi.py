@@ -5,9 +5,22 @@ class API:
     url = 'https://api.wbsrvc.com/'
 
     def __init__(self, key):
+        """Cake API object construction.
+        Param: 
+            key : dev portal API key
+        """
         self.header = dict(apikey=key)
 
     def call(self, method, params):
+        """Call CakeMail API.
+        Params:
+            method: what Class/Method to call. Array
+                    eg: ['Campaign', 'getInfo']
+            params: parameter of the method. Dict
+        """
+        if not 'user_key' in params and self.user_key is not None:
+            params['user_key'] = self.user_key
+
         request = urllib2.Request(
             self.url + method[0] + '/' + method[1],
             urllib.urlencode(params),
