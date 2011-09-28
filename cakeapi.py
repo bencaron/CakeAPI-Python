@@ -33,10 +33,9 @@ class API:
         except urllib2.HTTPError as error:
             return dict(Error=str(error))
    
-    def login(self, params):
+    def login(self, **params):
         """Login to CakeMail and remember the user_key for future uses.
             Params:
-                params: Dict containing
                         email:    api user email
                         password: its password
         """
@@ -47,3 +46,5 @@ class API:
         if not resp['status'] == 'success':
             return dict(Error= resp['data'])
         self.user_key = resp['data']['user_key']
+        return resp
+
